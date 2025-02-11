@@ -18,7 +18,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module spart(
-    input clk,
+    input clk, //Runs at 50MHz
     input rst,
     input iocs,
     input iorw,
@@ -30,5 +30,33 @@ module spart(
     input rxd
     );
 
+
+    ////////////////Declared Variables//////////////////
+
+
+
+
+
+
+
+
+    ////////////////Instantated Modules/////////////////
+
+
+
+
+
+
+
+    ///////////////////////Logic///////////////////////
+
+
+
+
+
+
+    //IO addressing
+
+    //00 -> Transmit Buffer (IOR/W = 0) : Receive Buffer (IOR/W)
 
 endmodule

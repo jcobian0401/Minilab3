@@ -19,8 +19,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 module spart(
     input clk, //Runs at 50MHz
-    input rst,
-    input iocs,
+    input rst_n, //
+    input iocs, //Active High
     input iorw,
     output rda,
     output tbr,
@@ -29,34 +29,90 @@ module spart(
     output txd,
     input rxd
     );
-
-
     ////////////////Declared Variables//////////////////
-
-
-
-
-
-
-
+    defparam 4800Baud = 16'h028C;
+    defparam 9600Baud = 16'h0145;
+    defparam 19200Baud = 16'h00A3;
+    defparam 38400Baud = 16'h0052;
+    logic [15:0] DB;
+    logic [15:0] DC;
+    logic [7:0] tx_data, rx_data, databus_i;
+    logic uart_clk, fill_dc, tbr_i, rda_i, rxd_i, txd_i;
 
     ////////////////Instantated Modules/////////////////
+    UART_tx tx (
+        .clk(clk), 
+        .rst_n(rst_n), 
+        .trmt(????), 
+        .baud_clk(uart_clk),
+        .tx_data(),
+        .TX(txd_i), 
+        .tx_done()
+    );
 
-
-
-
-
-
-
-    ///////////////////////Logic///////////////////////
-
-
-
-
-
+    UART_rx rx (
+        .clk(clk), 
+        .rst_n(rst_n), 
+        .RX(rxd_i), 
+        .baud_clk(uart_clk),
+        .rx_data(), 
+        .rdy(rda_i)
+    );
+    ///////////////////////Bus Interface///////////////////////
+    assign rda = icos ? rda_i : 1'b0;
+    assign tbr = icos ? tbr_i : 1'b1;
+    assign txd = icos ? txd_i : 1'b1;
+    assign rxd = icos ? rxd_i : 1'b1;
+    assign databus = icos ? databus_i : 8'b0;
 
     //IO addressing
-
     //00 -> Transmit Buffer (IOR/W = 0) : Receive Buffer (IOR/W)
+    //01 -> Status Register (IOR/W = 1)
+    //10 -> DB(Low) Division Buffer
+    //11 -> DB(High) Division Buffer
+
+    
+    //flopping 
+    always_ff @(posedge clk, negedge rst_n) begin
+        if(!rst_n) begin
+            databus_i = '0;
+        end
+        else if(begin
+    end
+
+
+    //////////////////////Division Counter///////////////////////
+
+    always_comb begin
+        if(fill_dc) begin
+            case(DB)
+                16'd4800: 
+                    DC = 4800Baud;
+                16'd9600: 
+                    DC = 9600Baud;
+                16'd19200: 
+                    DC = 19200Baud;
+                16'd38400: 
+                    DC = 38400Baud;
+                default: 
+                    DC = 9600Baud;
+            endcase
+        end
+    end
+    
+    assign uart_clk = ~|DC
+
+    always_ff @(posedge clk, negedge rst_n) begin
+        if(!rst_n) begin
+            DC <= '0;
+            DB <= '0;
+        end
+        else if(DC == 16'b0) begin
+            fill_dc <= 1'b1;
+        end
+        else begin
+            DC <= DC - 1;
+        end
+    end
 
 endmodule

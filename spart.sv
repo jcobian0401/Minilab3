@@ -63,7 +63,7 @@ module spart(
     assign tbr = icos ? tbr_i : 1'b1;
     assign txd = icos ? txd_i : 1'b1;
     assign rxd = icos ? rxd_i : 1'b1;
-    assign databus = icos ? databus_i : 8'b0;
+    assign databus = icos ? databus_i : 8'bz;
 
     //RDA is in 0 and TBR is in 
     assign status_reg = {6{1'b0}, tbr, rda}

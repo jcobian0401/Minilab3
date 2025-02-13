@@ -49,7 +49,7 @@ end
 // or set tx_done to 0 when init is high
 always_ff @(posedge clk, negedge rst_n) begin
 	if (!rst_n) begin
-		tx_done <= 0;
+		tx_done <= 1;
 	end
 	else if (init) begin
 		tx_done <= 0;

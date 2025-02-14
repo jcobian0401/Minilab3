@@ -37,7 +37,7 @@ module spart(
     logic [15:0] DB;
     logic [15:0] DC, iDC;
     logic [7:0] tx_data, rx_data, databus_i, status_reg;
-    logic uart_clk, fill_dc, tbr_i, rda_i, rxd_i, txd_i, transmit;
+    logic uart_clk, tbr_i, rda_i, rxd_i, txd_i, transmit;
 
     ////////////////Instantated Modules/////////////////
     UART_tx tx (
@@ -75,19 +75,20 @@ module spart(
     //11 -> DB(High) Division Buffer
     always_comb begin
         casez({ioaddr, iorw})
-            3'b000: databus_i = tx_data;
+            //2'b00: databus_i = tx_data;
 
-            3'b001: databus_i = rx_data;
+            //2'b00: databus_i = rx_data;
 
-            3'b011: databus_i = status_reg;
+            2'b01: databus_i = status_reg;
 
-            3'b10?: databus_i = DB[7:0];
+            2'b10: DB[7:0] = databus; 
             
-            3'b11?: databus_i = DB[15:8];
+            2'b11: DB[15:8] = databus;
 
             default: databus_i = 8'bz;
         endcase
     end
+
 
     //Transmission logic
     always_ff @(posedge clk, negedge rst_n) begin
@@ -100,27 +101,26 @@ module spart(
  
 
     //////////////////////Division Counter///////////////////////
-
     always_comb begin
-            case(DB)
-                16'd4800: 
-                    iDC = Baud4800;
-                16'd9600: 
-                    iDC = Baud9600;
-                16'd19200: 
-                    iDC = Baud19200;
-                16'd38400: 
-                    iDC = Baud38400;
-                default: 
-                    iDC = Baud9600;
-            endcase
+        case(DB)
+            16'd4800: 
+                iDC = Baud4800;
+            16'd9600: 
+                iDC = Baud9600;
+            16'd19200: 
+                iDC = Baud19200;
+            16'd38400: 
+                iDC = Baud38400;
+            default: 
+                iDC = Baud9600;
+        endcase
     end
-    
+
     assign uart_clk = ~|DC;
 
     always_ff @(posedge clk, negedge rst_n) begin
         if(!rst_n) begin
-            DB <= '0;
+           
         end
         else if(DC == 16'b0) begin
             DC <= iDC;

@@ -1,0 +1,289 @@
+# Compile of driver.sv was successful.
+# Compile of minilab3_tb.sv failed with 2 errors.
+# Compile of spart.sv was successful.
+# Compile of UART_rx.sv was successful.
+# Compile of UART_tx.sv was successful.
+# 5 compiles, 1 failed with 2 errors.
+# Compile of driver.sv was successful.
+# Compile of minilab3_tb.sv failed with 1 errors.
+# Compile of spart.sv was successful.
+# Compile of UART_rx.sv was successful.
+# Compile of UART_tx.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of minilab3_tb.sv was successful.
+vsim -voptargs=+acc work.minilab3_tb
+# vsim -voptargs="+acc" work.minilab3_tb 
+# Start time: 18:53:45 on Feb 13,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Error (suppressible): I:/ece554/Minilab3/minilab3_tb.sv(46): (vopt-8885) Illegal inout port connection for 'databus' (8th connection) to reg type. 
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# End time: 18:53:48 on Feb 13,2025, Elapsed time: 0:00:03
+# Errors: 1, Warnings: 8
+# Compile of minilab3_tb.sv was successful.
+vsim -voptargs=+acc work.minilab3_tb
+# vsim -voptargs="+acc" work.minilab3_tb 
+# Start time: 18:54:03 on Feb 13,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "driver(fast)".
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2685) [TFMPC] - Too few port connections for 'rx'.  Expected 7, found 6.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2718) [TFMPC] - Missing connection for port 'clr_rdy'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+add wave -position insertpoint  \
+sim:/minilab3_tb/duts0/iocs \
+sim:/minilab3_tb/duts0/iorw \
+sim:/minilab3_tb/duts0/rda \
+sim:/minilab3_tb/duts0/tbr \
+sim:/minilab3_tb/duts0/ioaddr \
+sim:/minilab3_tb/duts0/databus \
+sim:/minilab3_tb/duts0/txd \
+sim:/minilab3_tb/duts0/rxd \
+sim:/minilab3_tb/duts0/DB \
+sim:/minilab3_tb/duts0/DC \
+sim:/minilab3_tb/duts0/iDC \
+sim:/minilab3_tb/duts0/tx_data \
+sim:/minilab3_tb/duts0/rx_data \
+sim:/minilab3_tb/duts0/databus_i \
+sim:/minilab3_tb/duts0/status_reg \
+sim:/minilab3_tb/duts0/uart_clk \
+sim:/minilab3_tb/duts0/fill_dc \
+sim:/minilab3_tb/duts0/tbr_i \
+sim:/minilab3_tb/duts0/rda_i \
+sim:/minilab3_tb/duts0/rxd_i \
+sim:/minilab3_tb/duts0/txd_i \
+sim:/minilab3_tb/duts0/transmit
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(72)
+#    Time: 5 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 72
+# Compile of driver.sv was successful.
+# Compile of minilab3_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of minilab3_tb.sv failed with 2 errors.
+# Compile of driver.sv was successful.
+# Compile of minilab3_tb.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of UART_rx.sv was successful.
+# Compile of UART_tx.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.minilab3_tb
+# End time: 19:11:50 on Feb 13,2025, Elapsed time: 0:17:47
+# Errors: 0, Warnings: 8
+# vsim -voptargs="+acc" work.minilab3_tb 
+# Start time: 19:11:50 on Feb 13,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "driver(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+add wave -position insertpoint  \
+sim:/minilab3_tb/tester/clk \
+sim:/minilab3_tb/tester/rst_n \
+sim:/minilab3_tb/tester/iocs \
+sim:/minilab3_tb/tester/iorw \
+sim:/minilab3_tb/tester/rda \
+sim:/minilab3_tb/tester/tbr \
+sim:/minilab3_tb/tester/ioaddr \
+sim:/minilab3_tb/tester/databus \
+sim:/minilab3_tb/tester/txd \
+sim:/minilab3_tb/tester/rxd \
+sim:/minilab3_tb/tester/DB \
+sim:/minilab3_tb/tester/DC \
+sim:/minilab3_tb/tester/iDC \
+sim:/minilab3_tb/tester/tx_data \
+sim:/minilab3_tb/tester/rx_data \
+sim:/minilab3_tb/tester/databus_i \
+sim:/minilab3_tb/tester/status_reg \
+sim:/minilab3_tb/tester/uart_clk \
+sim:/minilab3_tb/tester/fill_dc \
+sim:/minilab3_tb/tester/tbr_i \
+sim:/minilab3_tb/tester/rda_i \
+sim:/minilab3_tb/tester/rxd_i \
+sim:/minilab3_tb/tester/txd_i \
+sim:/minilab3_tb/tester/transmit
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(100)
+#    Time: 25 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 100
+# Compile of minilab3_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(100)
+#    Time: 10015 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 100
+add wave -position insertpoint  \
+sim:/minilab3_tb/test_iocs \
+sim:/minilab3_tb/test_iorw \
+sim:/minilab3_tb/test_rda \
+sim:/minilab3_tb/test_tbr \
+sim:/minilab3_tb/test_databus_en \
+sim:/minilab3_tb/test_ioaddr \
+sim:/minilab3_tb/test_databus \
+sim:/minilab3_tb/test_dataout \
+sim:/minilab3_tb/baud_rate
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(100)
+#    Time: 10015 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 100
+# Compile of minilab3_tb.sv was successful.
+# Compile of spart.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2685) [TFMPC] - Too few port connections for 'rx'.  Expected 7, found 6.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2718) [TFMPC] - Missing connection for port 'clr_rdy'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(100)
+#    Time: 10015 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 100
+# Compile of minilab3_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(100)
+#    Time: 65 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 100
+# Compile of spart.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2685) [TFMPC] - Too few port connections for 'rx'.  Expected 7, found 6.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2718) [TFMPC] - Missing connection for port 'clr_rdy'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(100)
+#    Time: 65 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 100
+# Compile of spart.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2685) [TFMPC] - Too few port connections for 'rx'.  Expected 7, found 6.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2718) [TFMPC] - Missing connection for port 'clr_rdy'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(100)
+#    Time: 65 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 100
+# Compile of spart.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2685) [TFMPC] - Too few port connections for 'rx'.  Expected 7, found 6.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2718) [TFMPC] - Missing connection for port 'clr_rdy'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(100)
+#    Time: 65 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 100
+# Compile of minilab3_tb.sv was successful.
+# Compile of spart.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2685) [TFMPC] - Too few port connections for 'rx'.  Expected 7, found 6.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2718) [TFMPC] - Missing connection for port 'clr_rdy'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(102)
+#    Time: 75 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 102
+# Compile of spart.sv was successful.
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2685) [TFMPC] - Too few port connections for 'rx'.  Expected 7, found 6.
+# ** Warning: I:/ece554/Minilab3/spart.sv(53): (vopt-2718) [TFMPC] - Missing connection for port 'clr_rdy'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=3.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(102)
+#    Time: 75 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 102

@@ -1,0 +1,29 @@
+I:/ece554/Minilab3/UART_tx.sv {1 {vlog -work work -vopt -sv -stats=none I:/ece554/Minilab3/UART_tx.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module UART_tx
+
+Top level modules:
+	UART_tx
+
+} {} {}} I:/ece554/Minilab3/minilab3_tb.sv {1 {vlog -work work -vopt -sv -stats=none I:/ece554/Minilab3/minilab3_tb.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module minilab3_tb
+
+Top level modules:
+	minilab3_tb
+
+} {} {}} I:/ece554/Minilab3/driver.sv {1 {vlog -work work -vopt -sv -stats=none I:/ece554/Minilab3/driver.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module driver
+
+Top level modules:
+	driver
+
+} {} {}} I:/ece554/Minilab3/UART_rx.sv {1 {vlog -work work -vopt -sv -stats=none I:/ece554/Minilab3/UART_rx.sv
+Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
+-- Compiling module UART_rx
+
+Top level modules:
+	UART_rx
+
+} {} {}}

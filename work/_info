@@ -1,0 +1,170 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/23.1std
+T_opt
+!s110 1739497299
+V6FOb`5Zj[]I<aTLCO<V9H1
+04 11 4 work minilab3_tb fast 0
+=10-4cd7179364dd-67ae9f52-204-4e0
+R1
+!s12b OEM100
+!s124 OEM10U8 
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+vdriver
+2I:/ece554/Minilab3/driver.sv
+Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1739495499
+!i10b 1
+!s100 h=V`1Y@oDNj;hf;S^?KA33
+IClm@D?[oMAjj?1Ph<mOgU1
+S1
+Z4 dI:/ece554/Minilab3
+w1739495101
+8I:/ece554/Minilab3/driver.sv
+FI:/ece554/Minilab3/driver.sv
+!i122 11
+L0 1 136
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2023.3;77
+r1
+!s85 0
+31
+!s108 1739495499.000000
+!s107 I:/ece554/Minilab3/driver.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/driver.sv|
+!i113 0
+Z7 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vminilab3_tb
+2I:/ece554/Minilab3/minilab3_tb.sv
+R3
+!s110 1739497235
+!i10b 1
+!s100 1gD]WjU>71_DFF6ojRgCH0
+I4Bz5lC9T[PeLQMQe>mGIf1
+S1
+R4
+w1739496941
+8I:/ece554/Minilab3/minilab3_tb.sv
+FI:/ece554/Minilab3/minilab3_tb.sv
+!i122 23
+L0 1 113
+R5
+R6
+r1
+!s85 0
+31
+!s108 1739497235.000000
+!s107 I:/ece554/Minilab3/minilab3_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/minilab3_tb.sv|
+!i113 0
+R7
+R2
+vspart
+2I:/ece554/Minilab3/spart.sv
+R3
+!s110 1739497292
+!i10b 1
+!s100 AaZGT?L0>9?JTMmSQ3WVM0
+Il6lmfYUonc86^HMeF@V1h0
+S1
+R4
+w1739497287
+8I:/ece554/Minilab3/spart.sv
+FI:/ece554/Minilab3/spart.sv
+!i122 25
+L0 20 114
+R5
+R6
+r1
+!s85 0
+31
+!s108 1739497292.000000
+!s107 I:/ece554/Minilab3/spart.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/spart.sv|
+!i113 0
+R7
+R2
+vUART_rx
+2I:/ece554/Minilab3/UART_rx.sv
+R3
+!s110 1739495501
+!i10b 1
+!s100 HX_[MbLl:3V;2nKhJSiT]2
+ILOOClRHLLOL3XaZf2MY>=3
+S1
+R4
+w1739320097
+8I:/ece554/Minilab3/UART_rx.sv
+FI:/ece554/Minilab3/UART_rx.sv
+!i122 14
+L0 1 126
+R5
+R6
+r1
+!s85 0
+31
+!s108 1739495501.000000
+!s107 I:/ece554/Minilab3/UART_rx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/UART_rx.sv|
+!i113 0
+R7
+R2
+n@u@a@r@t_rx
+vUART_tx
+2I:/ece554/Minilab3/UART_tx.sv
+R3
+!s110 1739495502
+!i10b 1
+!s100 g3M8UgSfEH?dMc4H5:chA3
+IiT:?QbG^RQ>1PX5X>@_k13
+S1
+R4
+w1739486170
+8I:/ece554/Minilab3/UART_tx.sv
+FI:/ece554/Minilab3/UART_tx.sv
+!i122 15
+L0 1 106
+R5
+R6
+r1
+!s85 0
+31
+!s108 1739495502.000000
+!s107 I:/ece554/Minilab3/UART_tx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/UART_tx.sv|
+!i113 0
+R7
+R2
+n@u@a@r@t_tx

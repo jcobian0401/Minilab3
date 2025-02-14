@@ -73,8 +73,8 @@ module driver(
         // Default values
 	save = 0;
         next_state = current_state;
-        iocs_reg = 1'b0;
-        iorw_reg = 1'b0;
+        iocs_reg = 1'b0; //?? this might need to be changed
+        iorw_reg = 1'b1;
         ioaddr_reg = 2'b00;
         data_out = 8'h00;
         data_bus_en = 1'b0;
@@ -83,9 +83,7 @@ module driver(
             IDLE: begin
                 if (rda) begin
                     next_state = READ_DATA;
-                end else if (tbr) begin
-                    next_state = WRITE_DATA;
-                end
+                end 
             end
 
             INIT_BRG_LOW: begin
@@ -108,22 +106,19 @@ module driver(
 
             WAIT_TBR: begin
                 if (rda) begin
-		    iocs_reg = 1'b1;
+		            iocs_reg = 1'b1;
                     iorw_reg = 1'b1;         // Read
                     ioaddr_reg = 2'b00;      // Receive Buffer address
-		    save = 1;
+		            save = 1;
                     next_state = READ_DATA;
                 end else if (tbr) begin
                     next_state = WRITE_DATA;
                 end
             end
-
             READ_DATA: begin
-		if (tbr) begin
-		    next_state = WRITE_DATA;
-		end 
+		        if (tbr) 
+		            next_state = WRITE_DATA;
             end
-
             WRITE_DATA: begin
                 iocs_reg = 1'b1;
                 iorw_reg = 1'b0;     // Write
@@ -132,7 +127,6 @@ module driver(
                 data_bus_en = 1'b1;
                 next_state = IDLE;
             end
-
             default: begin
                 next_state = IDLE;
             end

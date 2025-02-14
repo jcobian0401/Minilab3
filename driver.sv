@@ -98,9 +98,9 @@ module driver(
         iocs_reg = 1'b1; //?? this might need to be changed
         iorw_reg = 1'b1;
         ioaddr_reg = 2'b00;
-        data_out = 8'h00;
+        data_out = save_buffer;
         data_bus_en = 1'b0;
-	br_set = 1'b0;
+	    br_set = 1'b0;
         
         case (current_state)
             IDLE: begin
@@ -108,41 +108,30 @@ module driver(
 		        next_state = INIT_BRG_LOW;
 		    end
                 if (rda) begin
-                    iocs_reg = 1'b1;
-                    iorw_reg = 1'b1;         // Read
                     ioaddr_reg = 2'b00;      // Receive Buffer address
                     save = 1;
                     next_state = READ_DATA;
                 end 
             end
             INIT_BRG_LOW: begin
-                iocs_reg = 1'b1;
-                iorw_reg = 1'b0;         // Write
                 ioaddr_reg = 2'b10;      // Low Division Buffer address
                 data_out = baud_divisor[7:0];  // Lower byte
                 data_bus_en = 1'b1;
                 next_state = INIT_BRG_HIGH;
             end
-
             INIT_BRG_HIGH: begin
-                iocs_reg = 1'b1;
-                iorw_reg = 1'b0;         // Write
                 ioaddr_reg = 2'b11;      // High Division Buffer address
                 data_out = baud_divisor[15:8]; // Upper byte
                 data_bus_en = 1'b1;
 		        br_set = 1'b1;
-                next_state = WAIT_RDA;
+                next_state = IDLE;
             end
-
-           READ_DATA: begin
+            READ_DATA: begin
 		        if (tbr) 
 		            next_state = WRITE_DATA;
             end
             WRITE_DATA: begin
-                iocs_reg = 1'b1;
                 iorw_reg = 1'b0;     // Write
-                ioaddr_reg = 2'b00;  // Transmit Buffer address
-                data_out = save_buffer;  // Echo back the received data
                 data_bus_en = 1'b1;
                 next_state = IDLE;
             end

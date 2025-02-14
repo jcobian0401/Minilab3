@@ -30,15 +30,15 @@ module spart(
     input rxd
     );
     ////////////////Declared Variables//////////////////
-    localparam Baud4800 = 16'h028C;
-    localparam Baud9600 = 16'h0145;
-    localparam Baud19200 = 16'h00A3;
-    localparam Baud38400 = 16'h0052;
+    localparam Baud4800 = 16'h28b1;
+    localparam Baud9600 = 16'h1459;
+    localparam Baud19200 = 16'h0A2D;
+    localparam Baud38400 = 16'h0516;
     logic [15:0] DB;
     logic [15:0] DC, iDC;
     logic [7:0] tx_data, rx_data, status_reg;
     tri [7:0] databus_i;
-    logic uart_clk, tbr_i, rda_i, rxd_i, txd_i, transmit;
+    logic uart_clk, tbr_i, rda_i, rxd_i, txd_i, transmit, clr_rdy;
 
     ////////////////Instantated Modules/////////////////
     UART_tx tx (
@@ -57,7 +57,8 @@ module spart(
         .RX(rxd), 
         .baud_clk(uart_clk),
         .rx_data(rx_data), 
-        .rdy(rda_i)
+        .rdy(rda_i),
+        .clr_rdy(clr_rdy)
     );
     ///////////////////////Bus Interface///////////////////////
     assign rda = iocs ? rda_i : 1'b0;
@@ -69,30 +70,35 @@ module spart(
     //RDA is in 0 and TBR is in 
     assign status_reg = {{6'b000000}, tbr, rda};
 
-    //Transmit Buffer (IOR/W = 0)
-    assign tx_data = ({ioaddr, iorw} == 3'b000 ) ? databus : '0;
-
+    
     //Receive Buffer (IOR/W = 1)
-    assign databus_i = ({ioaddr, iorw} == 3'b001 ) ? rx_data : 'bz;
+    assign databus_i = ({ioaddr, iorw} == 3'b001) ? rx_data : ({ioaddr, iorw} == 3'b011) ? status_reg : 'bz;
 
-    //Status Register (IOR/W = 1)
-    assign databus_i = ({ioaddr, iorw} == 3'b011 ) ? status_reg : 'bz;
+    //Transmit Buffer (IOR/W = 0)
+    always_ff @(posedge clk, negedge rst_n) begin
+        if(!rst_n) 
+            tx_data <= '0;
+        else if({ioaddr, iorw} == 3'b000) 
+            tx_data <= databus;
+    end
 
 
+    always_ff @(posedge clk, negedge rst_n) begin
+        if(!rst_n) 
+            clr_rdy <= 0;
+        else
+            clr_rdy <= rda_i;
+    end
     
     //10 -> DB(Low) Division Buffer
     //11 -> DB(High) Division Buffer
     always_ff @(posedge clk, negedge rst_n) begin
-        if(!rst_n) begin
+        if(!rst_n) 
             DB <= '0;
-        end
-        else begin
-            case(ioaddr)
-                2'b10: DB[7:0] <= databus;
-                2'b11: DB[15:8] <= databus;
-                default: DB <= DB;
-            endcase
-        end
+        else if(ioaddr == 2'b10) 
+			DB[7:0] <= databus;
+		else if(ioaddr == 2'b11) 
+            DB[15:8] <= databus;
     end
     
     //Transmission logic

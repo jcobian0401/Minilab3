@@ -1,0 +1,3 @@
+Warning (10273): Verilog HDL warning at spart.sv(68): extended using "x" or "z" File: I:/ece554/Minilab3/spart.sv Line: 68
+Warning (10273): Verilog HDL warning at spart.sv(75): extended using "x" or "z" File: I:/ece554/Minilab3/spart.sv Line: 75
+Warning (10273): Verilog HDL warning at driver.sv(69): extended using "x" or "z" File: I:/ece554/Minilab3/driver.sv Line: 69

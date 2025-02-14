@@ -1,0 +1,8 @@
+
+State Machine - |lab1_spart|driver:driver0|current_state
+Name current_state.WRITE_DATA current_state.READ_DATA current_state.INIT_BRG_LOW current_state.IDLE current_state.INIT_BRG_HIGH 
+current_state.IDLE 0 0 0 0 0 
+current_state.INIT_BRG_LOW 0 0 1 1 0 
+current_state.INIT_BRG_HIGH 0 0 0 1 1 
+current_state.READ_DATA 0 1 0 1 0 
+current_state.WRITE_DATA 1 0 0 1 0 

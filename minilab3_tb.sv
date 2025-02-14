@@ -101,9 +101,27 @@ initial begin
     test_iorw = 0;
     test_dataout = 8'h45;
     
+    @(negedge clk)
+    test_databus_en = 0;
+    test_ioaddr = '0;
+    test_iorw = 1;
     //repeat(1000000) @(posedge clk);
 
-    @(posedge test_rda);
+    @(posedge test_tbr);
+    @(negedge clk);
+
+    test_databus_en = 1;
+    test_iorw = 0;
+    test_dataout = 8'h87;
+    
+    @(negedge clk)
+    test_databus_en = 0;
+    test_ioaddr = '0;
+    test_iorw = 1;    
+
+    repeat(2) @(posedge test_rda);
+
+    repeat(50) @(posedge clk);
 
     $stop; 
 end

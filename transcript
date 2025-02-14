@@ -61,3 +61,151 @@ run -all
 # ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(108)
 #    Time: 19045 ns  Iteration: 2  Instance: /minilab3_tb
 # Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 108
+# Compile of driver.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "driver(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(108)
+#    Time: 10745 ns  Iteration: 2  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 108
+# Compile of minilab3_tb.sv was successful.
+# Compile of minilab3_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(110)
+#    Time: 11745 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 110
+# Compile of driver.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "driver(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(110)
+#    Time: 11745 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 110
+# Compile of minilab3_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(110)
+#    Time: 19545 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 110
+# Compile of driver.sv was successful.
+# Compile of spart.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of spart.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "driver(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(110)
+#    Time: 19545 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 110
+# Compile of spart.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(110)
+#    Time: 19545 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 110
+# Compile of minilab3_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(114)
+#    Time: 19545 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 114
+# Compile of driver.sv was successful.
+# Compile of minilab3_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+# Compile of driver.sv failed with 2 errors.
+# Compile of driver.sv failed with 2 errors.
+# Compile of minilab3_tb.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of UART_rx.sv was successful.
+# Compile of UART_tx.sv was successful.
+# 5 compiles, 1 failed with 2 errors.
+# Compile of driver.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "driver(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.UART_tx(fast)
+# Loading work.UART_rx(fast)
+# Loading work.driver(fast)
+run -all
+# ** Note: $stop    : I:/ece554/Minilab3/minilab3_tb.sv(126)
+#    Time: 27845 ns  Iteration: 1  Instance: /minilab3_tb
+# Break in Module minilab3_tb at I:/ece554/Minilab3/minilab3_tb.sv line 126
+# End time: 17:20:30 on Feb 14,2025, Elapsed time: 1:33:49
+# Errors: 0, Warnings: 2

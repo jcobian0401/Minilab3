@@ -36,7 +36,8 @@ module spart(
     localparam Baud38400 = 16'h0052;
     logic [15:0] DB;
     logic [15:0] DC, iDC;
-    logic [7:0] tx_data, rx_data, databus_i, status_reg;
+    logic [7:0] tx_data, rx_data, status_reg;
+    tri [7:0] databus_i;
     logic uart_clk, tbr_i, rda_i, rxd_i, txd_i, transmit;
 
     ////////////////Instantated Modules/////////////////
@@ -46,14 +47,14 @@ module spart(
         .trmt(transmit), 
         .baud_clk(uart_clk),
         .tx_data(tx_data),
-        .TX(txd_i), 
+        .TX(txd), 
         .tx_done(tbr_i)
     );
 
     UART_rx rx (
         .clk(clk), 
         .rst_n(rst_n), 
-        .RX(rxd_i), 
+        .RX(rxd), 
         .baud_clk(uart_clk),
         .rx_data(rx_data), 
         .rdy(rda_i)
@@ -61,35 +62,39 @@ module spart(
     ///////////////////////Bus Interface///////////////////////
     assign rda = iocs ? rda_i : 1'b0;
     assign tbr = iocs ? tbr_i : 1'b1;
-    assign txd = iocs ? txd_i : 1'b1;
-    assign rxd = iocs ? rxd_i : 1'b1;
+    //assign txd = iocs ? txd_i : 1'b1;
+    //assign rxd = iocs ? rxd_i : 1'b1;
     assign databus = iocs ? databus_i : 8'bz;
 
     //RDA is in 0 and TBR is in 
     assign status_reg = {{6'b000000}, tbr, rda};
 
-    //IO addressing
-    //00 -> Transmit Buffer (IOR/W = 0) : Receive Buffer (IOR/W = 1)
-    //01 -> Status Register (IOR/W = 1)
+    //Transmit Buffer (IOR/W = 0)
+    assign tx_data = ({ioaddr, iorw} == 3'b000 ) ? databus : '0;
+
+    //Receive Buffer (IOR/W = 1)
+    assign databus_i = ({ioaddr, iorw} == 3'b001 ) ? rx_data : 'bz;
+
+    //Status Register (IOR/W = 1)
+    assign databus_i = ({ioaddr, iorw} == 3'b011 ) ? status_reg : 'bz;
+
+
+    
     //10 -> DB(Low) Division Buffer
     //11 -> DB(High) Division Buffer
-    always_comb begin
-        casez({ioaddr, iorw})
-            //2'b00: databus_i = tx_data;
-
-            //2'b00: databus_i = rx_data;
-
-            2'b01: databus_i = status_reg;
-
-            2'b10: DB[7:0] = databus; 
-            
-            2'b11: DB[15:8] = databus;
-
-            default: databus_i = 8'bz;
-        endcase
+    always_ff @(posedge clk, negedge rst_n) begin
+        if(!rst_n) begin
+            DB <= '0;
+        end
+        else begin
+            case(ioaddr)
+                2'b10: DB[7:0] <= databus;
+                2'b11: DB[15:8] <= databus;
+                default: DB <= DB;
+            endcase
+        end
     end
-
-
+    
     //Transmission logic
     always_ff @(posedge clk, negedge rst_n) begin
         if(!rst_n)
@@ -116,16 +121,17 @@ module spart(
         endcase
     end
 
+
     assign uart_clk = ~|DC;
 
     always_ff @(posedge clk, negedge rst_n) begin
         if(!rst_n) begin
-           
+           DC <= '0;
         end
         else if(DC == 16'b0) begin
             DC <= iDC;
         end
-        else begin
+        else if (DC > 16'b0) begin
             DC <= DC - 1;
         end
     end

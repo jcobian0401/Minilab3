@@ -28,7 +28,7 @@ R1
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/intelFPGA_lite/23.1std
+Z2 dC:/intelFPGA_lite/23.1std
 T_opt
 !s110 1739497299
 V6FOb`5Zj[]I<aTLCO<V9H1
@@ -38,133 +38,124 @@ R1
 !s12b OEM100
 !s124 OEM10U8 
 o-quiet -auto_acc_if_foreign -work work +acc
-Z2 tCvgOpt 0
+tCvgOpt 0
 n@_opt
 OL;O;2023.3;77
+R2
 vdriver
-2I:/ece554/Minilab3/driver.sv
-Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-!s110 1739495499
+Z3 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z4 !s110 1739513305
 !i10b 1
-!s100 h=V`1Y@oDNj;hf;S^?KA33
-IClm@D?[oMAjj?1Ph<mOgU1
-S1
-Z4 dI:/ece554/Minilab3
-w1739495101
-8I:/ece554/Minilab3/driver.sv
-FI:/ece554/Minilab3/driver.sv
-!i122 11
-L0 1 136
+!s100 USalNTlkgF[[22D;eMB[j1
+I<fc3hh<_j;4jCUOK3[9i33
 Z5 VDg1SIo80bB@j0V0VzS_@n1
-Z6 OL;L;2023.3;77
+!s105 driver_sv_unit
+S1
+Z6 dC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3
+w1739512865
+8C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/driver.sv
+FC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/driver.sv
+L0 1
+Z7 OV;L;10.4d;61
 r1
 !s85 0
 31
-!s108 1739495499.000000
-!s107 I:/ece554/Minilab3/driver.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/driver.sv|
-!i113 0
-Z7 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
+Z8 !s108 1739513305.000000
+!s107 C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/driver.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/driver.sv|
+!i113 1
+Z9 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 vminilab3_tb
-2I:/ece554/Minilab3/minilab3_tb.sv
 R3
-!s110 1739497235
-!i10b 1
-!s100 1gD]WjU>71_DFF6ojRgCH0
-I4Bz5lC9T[PeLQMQe>mGIf1
-S1
 R4
-w1739496941
-8I:/ece554/Minilab3/minilab3_tb.sv
-FI:/ece554/Minilab3/minilab3_tb.sv
-!i122 23
-L0 1 113
+!i10b 1
+!s100 cF8zinVSX7BLmTH8VRT?11
+If?=9oD39L_UTfaQ?]0H>[1
 R5
+!s105 minilab3_tb_sv_unit
+S1
 R6
+w1739513299
+8C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/minilab3_tb.sv
+FC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/minilab3_tb.sv
+L0 1
+R7
 r1
 !s85 0
 31
-!s108 1739497235.000000
-!s107 I:/ece554/Minilab3/minilab3_tb.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/minilab3_tb.sv|
-!i113 0
-R7
-R2
+R8
+!s107 C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/minilab3_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/minilab3_tb.sv|
+!i113 1
+R9
 vspart
-2I:/ece554/Minilab3/spart.sv
 R3
-!s110 1739497292
+!s110 1739513683
 !i10b 1
-!s100 AaZGT?L0>9?JTMmSQ3WVM0
-Il6lmfYUonc86^HMeF@V1h0
-S1
-R4
-w1739497287
-8I:/ece554/Minilab3/spart.sv
-FI:/ece554/Minilab3/spart.sv
-!i122 25
-L0 20 114
+!s100 >6jld6Pi9@0?8jmIIH;UB2
+I=VQ>agK]IbJMQK1]>MfHA1
 R5
+!s105 spart_sv_unit
+S1
 R6
+w1739513677
+8C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/spart.sv
+FC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/spart.sv
+L0 20
+R7
 r1
 !s85 0
 31
-!s108 1739497292.000000
-!s107 I:/ece554/Minilab3/spart.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/spart.sv|
-!i113 0
-R7
-R2
+!s108 1739513683.000000
+!s107 C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/spart.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/spart.sv|
+!i113 1
+R9
 vUART_rx
-2I:/ece554/Minilab3/UART_rx.sv
 R3
-!s110 1739495501
-!i10b 1
-!s100 HX_[MbLl:3V;2nKhJSiT]2
-ILOOClRHLLOL3XaZf2MY>=3
-S1
 R4
-w1739320097
-8I:/ece554/Minilab3/UART_rx.sv
-FI:/ece554/Minilab3/UART_rx.sv
-!i122 14
-L0 1 126
+!i10b 1
+!s100 9`Y<`5c<Z;d@HXebzS;;M0
+I^N4NN>6]?4;GNBT1@92VN1
 R5
+!s105 UART_rx_sv_unit
+S1
 R6
+Z10 w1739510011
+8C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_rx.sv
+FC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_rx.sv
+L0 1
+R7
 r1
 !s85 0
 31
-!s108 1739495501.000000
-!s107 I:/ece554/Minilab3/UART_rx.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/UART_rx.sv|
-!i113 0
-R7
-R2
+R8
+!s107 C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_rx.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_rx.sv|
+!i113 1
+R9
 n@u@a@r@t_rx
 vUART_tx
-2I:/ece554/Minilab3/UART_tx.sv
 R3
-!s110 1739495502
-!i10b 1
-!s100 g3M8UgSfEH?dMc4H5:chA3
-IiT:?QbG^RQ>1PX5X>@_k13
-S1
 R4
-w1739486170
-8I:/ece554/Minilab3/UART_tx.sv
-FI:/ece554/Minilab3/UART_tx.sv
-!i122 15
-L0 1 106
+!i10b 1
+!s100 [F@ckPk>T>bgOaInLdmJ80
+I2LiGj2UK1gW:QHlROe3[<3
 R5
+!s105 UART_tx_sv_unit
+S1
 R6
+R10
+8C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_tx.sv
+FC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_tx.sv
+L0 1
+R7
 r1
 !s85 0
 31
-!s108 1739495502.000000
-!s107 I:/ece554/Minilab3/UART_tx.sv|
-!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/UART_tx.sv|
-!i113 0
-R7
-R2
+R8
+!s107 C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_tx.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_tx.sv|
+!i113 1
+R9
 n@u@a@r@t_tx

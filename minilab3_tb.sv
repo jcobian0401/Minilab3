@@ -73,18 +73,17 @@ initial begin
     test_iorw = 1;
     test_ioaddr = '0;
     test_databus_en = 0; //0 means listening
-    baud_rate = 16'd9600;
+    br_cfg = 2'b11; //Setting the baud rate of the dut to 38400
+    baud_rate = 16'd38400;
 
     @(posedge clk);
     rst_n = 1;
 
-    //Setting the baud rate of tester to 9600
+    //Setting the baud rate of tester to 38400
     @(negedge clk);
     test_ioaddr = 2'b10; 
     test_dataout = baud_rate[7:0]; 
     test_databus_en = 1;
-
-
 
     @(negedge clk);
     test_ioaddr = 2'b11; 
@@ -93,11 +92,18 @@ initial begin
 
     @(negedge clk);
     test_databus_en = 0;
+    test_ioaddr = '0;
 
-    repeat(5) @(posedge clk);
+    //Sending a message
+    @(negedge clk);
 
+    test_databus_en = 1;
+    test_iorw = 0;
+    test_dataout = 8'h45;
+    
+    repeat(10000000) @(posedge clk);
 
-    //Setting the baud rate of dut to 9600
+    //@(posedge test_rda);
 
     $stop; 
 end

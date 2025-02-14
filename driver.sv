@@ -73,7 +73,7 @@ module driver(
         // Default values
 	save = 0;
         next_state = current_state;
-        iocs_reg = 1'b0; //?? this might need to be changed
+        iocs_reg = 1'b1; //?? this might need to be changed
         iorw_reg = 1'b1;
         ioaddr_reg = 2'b00;
         data_out = 8'h00;
@@ -81,13 +81,7 @@ module driver(
         
         case (current_state)
             IDLE: begin
-<<<<<<< HEAD
-                if (rda) begin
-                    next_state = READ_DATA;
-                end 
-=======
                 next_state = INIT_BRG_LOW;
->>>>>>> bcfa19c043ed0e6376c7b823f18bb5d81249de82
             end
 
             INIT_BRG_LOW: begin

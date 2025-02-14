@@ -52,7 +52,7 @@ module driver(
         IDLE,
         INIT_BRG_LOW,   // Initialize Baud Rate Generator Low byte
         INIT_BRG_HIGH,  // Initialize Baud Rate Generator High byte
-        WAIT_TBR,       // Wait for transmit buffer ready
+        WAIT_RDA,       // Wait for transmit buffer ready
         READ_DATA,      // Read received data
         WRITE_DATA      // Write data for transmission
     } state_t;
@@ -81,9 +81,13 @@ module driver(
         
         case (current_state)
             IDLE: begin
+<<<<<<< HEAD
                 if (rda) begin
                     next_state = READ_DATA;
                 end 
+=======
+                next_state = INIT_BRG_LOW;
+>>>>>>> bcfa19c043ed0e6376c7b823f18bb5d81249de82
             end
 
             INIT_BRG_LOW: begin
@@ -101,19 +105,17 @@ module driver(
                 ioaddr_reg = 2'b11;      // High Division Buffer address
                 data_out = baud_divisor[15:8]; // Upper byte
                 data_bus_en = 1'b1;
-                next_state = WAIT_TBR;
+                next_state = WAIT_RDA;
             end
 
-            WAIT_TBR: begin
+            WAIT_RDA: begin
                 if (rda) begin
 		            iocs_reg = 1'b1;
                     iorw_reg = 1'b1;         // Read
                     ioaddr_reg = 2'b00;      // Receive Buffer address
 		            save = 1;
                     next_state = READ_DATA;
-                end else if (tbr) begin
-                    next_state = WRITE_DATA;
-                end
+                end 
             end
             READ_DATA: begin
 		        if (tbr) 

@@ -30,12 +30,12 @@ module spart(
     input rxd
     );
     ////////////////Declared Variables//////////////////
-    defparam 4800Baud = 16'h028C;
-    defparam 9600Baud = 16'h0145;
-    defparam 19200Baud = 16'h00A3;
-    defparam 38400Baud = 16'h0052;
+    localparam Baud4800 = 16'h028C;
+    localparam Baud9600 = 16'h0145;
+    localparam Baud19200 = 16'h00A3;
+    localparam Baud38400 = 16'h0052;
     logic [15:0] DB;
-    logic [15:0] DC;
+    logic [15:0] DC, iDC;
     logic [7:0] tx_data, rx_data, databus_i, status_reg;
     logic uart_clk, fill_dc, tbr_i, rda_i, rxd_i, txd_i, transmit;
 
@@ -59,14 +59,14 @@ module spart(
         .rdy(rda_i)
     );
     ///////////////////////Bus Interface///////////////////////
-    assign rda = icos ? rda_i : 1'b0;
-    assign tbr = icos ? tbr_i : 1'b1;
-    assign txd = icos ? txd_i : 1'b1;
-    assign rxd = icos ? rxd_i : 1'b1;
-    assign databus = icos ? databus_i : 8'bz;
+    assign rda = iocs ? rda_i : 1'b0;
+    assign tbr = iocs ? tbr_i : 1'b1;
+    assign txd = iocs ? txd_i : 1'b1;
+    assign rxd = iocs ? rxd_i : 1'b1;
+    assign databus = iocs ? databus_i : 8'bz;
 
     //RDA is in 0 and TBR is in 
-    assign status_reg = {6{1'b0}, tbr, rda}
+    assign status_reg = {{6'b000000}, tbr, rda};
 
     //IO addressing
     //00 -> Transmit Buffer (IOR/W = 0) : Receive Buffer (IOR/W = 1)
@@ -102,31 +102,28 @@ module spart(
     //////////////////////Division Counter///////////////////////
 
     always_comb begin
-        if(fill_dc) begin
             case(DB)
                 16'd4800: 
-                    DC = 4800Baud;
+                    iDC = Baud4800;
                 16'd9600: 
-                    DC = 9600Baud;
+                    iDC = Baud9600;
                 16'd19200: 
-                    DC = 19200Baud;
+                    iDC = Baud19200;
                 16'd38400: 
-                    DC = 38400Baud;
+                    iDC = Baud38400;
                 default: 
-                    DC = 9600Baud;
+                    iDC = Baud9600;
             endcase
-        end
     end
     
-    assign uart_clk = ~|DC
+    assign uart_clk = ~|DC;
 
     always_ff @(posedge clk, negedge rst_n) begin
         if(!rst_n) begin
-            DC <= '0;
             DB <= '0;
         end
         else if(DC == 16'b0) begin
-            fill_dc <= 1'b1;
+            DC <= iDC;
         end
         else begin
             DC <= DC - 1;

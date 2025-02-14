@@ -14,9 +14,9 @@ module driver(
     logic iocs_reg;
     logic iorw_reg;
     logic [1:0] ioaddr_reg;
-    logic [7:0] data_out;           // Data to be written to SPART
+    logic [7:0] data_out, save_buffer;           // Data to be written to SPART
     logic [15:0] baud_divisor;      // Full baud rate divisor
-    logic data_bus_en;              // Enable driver's databus output
+    logic data_bus_en, save;              // Enable driver's databus output
 
     assign iocs = iocs_reg;
     assign iorw = iorw_reg;
@@ -33,9 +33,19 @@ module driver(
             default : baud_divisor = 16'd9600; // Default to 9600 baud
         endcase
     end
+	
+    always_ff @(posedge clk, negedge rst_n) begin
+	if(!rst_n) begin
+	    save_buffer <= '0;
+	end
+	else if(save) begin
+	    save_buffer <= databus;
+	end 
+    end
 
     // Tri-state buffer for bidirectional databus
     assign databus = (data_bus_en) ? data_out : 8'bz;
+    
 
     // State encoding
     typedef enum logic [2:0] {
@@ -61,6 +71,7 @@ module driver(
     // Combinational logic for next state and outputs
     always_comb begin
         // Default values
+	save = 0;
         next_state = current_state;
         iocs_reg = 1'b0;
         iorw_reg = 1'b0;
@@ -70,7 +81,11 @@ module driver(
         
         case (current_state)
             IDLE: begin
-                next_state = INIT_BRG_LOW;
+                if (rda) begin
+                    next_state = READ_DATA;
+                end else if (tbr) begin
+                    next_state = WRITE_DATA;
+                end
             end
 
             INIT_BRG_LOW: begin
@@ -93,6 +108,10 @@ module driver(
 
             WAIT_TBR: begin
                 if (rda) begin
+		    iocs_reg = 1'b1;
+                    iorw_reg = 1'b1;         // Read
+                    ioaddr_reg = 2'b00;      // Receive Buffer address
+		    save = 1;
                     next_state = READ_DATA;
                 end else if (tbr) begin
                     next_state = WRITE_DATA;
@@ -100,22 +119,18 @@ module driver(
             end
 
             READ_DATA: begin
-                iocs_reg = 1'b1;
-                iorw_reg = 1'b1;         // Read
-                ioaddr_reg = 2'b00;      // Receive Buffer address
-                data_bus_en = 1'b0;  // Input mode
-                next_state = WRITE_DATA;
+		if (tbr) begin
+		    next_state = WRITE_DATA;
+		end 
             end
 
             WRITE_DATA: begin
-                if (tbr) begin
-                    iocs_reg = 1'b1;
-                    iorw_reg = 1'b0;     // Write
-                    ioaddr_reg = 2'b00;  // Transmit Buffer address
-                    data_out = databus;  // Echo back the received data
-                    data_bus_en = 1'b1;
-                    next_state = WAIT_TBR;
-                end
+                iocs_reg = 1'b1;
+                iorw_reg = 1'b0;     // Write
+                ioaddr_reg = 2'b00;  // Transmit Buffer address
+                data_out = save_buffer;  // Echo back the received data
+                data_bus_en = 1'b1;
+                next_state = IDLE;
             end
 
             default: begin

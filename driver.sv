@@ -17,11 +17,33 @@ module driver(
     logic [7:0] data_out, save_buffer;           // Data to be written to SPART
     logic [15:0] baud_divisor;      // Full baud rate divisor
     logic data_bus_en, save;              // Enable driver's databus output
+    logic br_set;
 
     assign iocs = iocs_reg;
     assign iorw = iorw_reg;
     assign ioaddr = ioaddr_reg;
-    
+
+    logic [1:0] br_cfg_flopped;
+    logic br_change;
+
+    always_ff @(posedge clk, negedge rst_n) begin
+	if (!rst_n) begin
+	    br_cfg_flopped <= '0;
+	end else begin
+	    br_cfg_flopped <= br_cfg; 
+	end
+    end
+
+    always_ff @(posedge clk, negedge rst_n) begin
+	if (!rst_n) begin
+	    br_change <= 1;
+	end else if (br_cfg != br_cfg_flopped) begin
+	    br_change <= 1;
+	end else if (br_set) begin
+	    br_change <= 0;
+	end
+    end
+
     // Calculate baud divisor based on br_cfg
     // You'll need to adjust these values based on your clock frequency
     always_comb begin
@@ -78,10 +100,14 @@ module driver(
         ioaddr_reg = 2'b00;
         data_out = 8'h00;
         data_bus_en = 1'b0;
+	br_set = 1'b0;
         
         case (current_state)
             IDLE: begin
-                next_state = INIT_BRG_LOW;
+	        if (br_change) begin
+		    next_state = INIT_BRG_LOW;
+		end
+                next_state = WAIT_RDA;
             end
 
             INIT_BRG_LOW: begin
@@ -99,6 +125,7 @@ module driver(
                 ioaddr_reg = 2'b11;      // High Division Buffer address
                 data_out = baud_divisor[15:8]; // Upper byte
                 data_bus_en = 1'b1;
+		br_set = 1'b1;
                 next_state = WAIT_RDA;
             end
 

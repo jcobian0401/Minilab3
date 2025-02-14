@@ -118,7 +118,7 @@ always_comb begin
 end
 
 // asserting shirt only when baud_cnt is 0
-assign shift = receiving ? baud_clk : 1'b0;
+assign shift = baud_clk;
 
 //output everything from register but the MSB for rx_data
 assign rx_data = rx_shift_reg[7:0];

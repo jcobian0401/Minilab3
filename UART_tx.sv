@@ -98,7 +98,7 @@ always_comb begin
 	endcase
 end
 
-assign shift = transmitting ? baud_clk : 1'b0;
+assign shift = baud_clk;
 
 // outputting end of shift register to TX
 assign TX = tx_shift_reg[0];

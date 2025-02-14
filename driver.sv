@@ -85,8 +85,7 @@ module driver(
             end
 
             INIT_BRG_LOW: begin
-                iocs_reg = 1'b1;
-                iorw_reg = 1'b0;         // Write
+                iocs_reg = 1'b1;       
                 ioaddr_reg = 2'b10;      // Low Division Buffer address
                 data_out = baud_divisor[7:0];  // Lower byte
                 data_bus_en = 1'b1;
@@ -94,8 +93,7 @@ module driver(
             end
 
             INIT_BRG_HIGH: begin
-                iocs_reg = 1'b1;
-                iorw_reg = 1'b0;         // Write
+                iocs_reg = 1'b1;         
                 ioaddr_reg = 2'b11;      // High Division Buffer address
                 data_out = baud_divisor[15:8]; // Upper byte
                 data_bus_en = 1'b1;

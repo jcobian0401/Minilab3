@@ -101,19 +101,17 @@ initial begin
     test_iorw = 0;
     test_dataout = 8'h45;
     
-    repeat(10000000) @(posedge clk);
+    //repeat(1000000) @(posedge clk);
 
-    //@(posedge test_rda);
+    @(posedge test_rda);
 
     $stop; 
 end
 
 
 
-
-
-
-
-always #5 clk = ~clk;
+always begin
+    #5 clk = ~clk;
+end
 
 endmodule

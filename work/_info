@@ -1,7 +1,7 @@
 m255
 K4
 z2
-Z0 !s12c _opt
+Z0 !s12c _opt1
 Z1 !s99 nomlopt
 R0
 R1
@@ -17,9 +17,25 @@ R0
 R1
 R0
 R1
-R0
+Z2 !s12c _opt
 R1
-R0
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
+R1
+R2
 R1
 !s11f vlog 2023.3 2023.07, Jul 17 2023
 13
@@ -28,134 +44,156 @@ R1
 !i10e 25
 !i10f 100
 cModel Technology
-Z2 dC:/intelFPGA_lite/23.1std
+Z3 dC:/intelFPGA_lite/23.1std
 T_opt
 !s110 1739497299
 V6FOb`5Zj[]I<aTLCO<V9H1
-04 11 4 work minilab3_tb fast 0
+Z4 04 11 4 work minilab3_tb fast 0
 =10-4cd7179364dd-67ae9f52-204-4e0
 R1
-!s12b OEM100
-!s124 OEM10U8 
-o-quiet -auto_acc_if_foreign -work work +acc
-tCvgOpt 0
+Z5 !s12b OEM100
+Z6 !s124 OEM10U8 
+Z7 o-quiet -auto_acc_if_foreign -work work +acc
+Z8 tCvgOpt 0
 n@_opt
-OL;O;2023.3;77
-R2
+Z9 OL;O;2023.3;77
+R3
+T_opt1
+!s110 1739569810
+VaVVb5OD^[KYILFf[b@U9E2
+R4
+=2-4cd717943173-67afba91-c1-4c50
+R1
+R5
+R6
+R7
+R8
+n@_opt1
+R9
 vdriver
-Z3 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
-Z4 !s110 1739513305
+2I:/ece554/Minilab3/driver.sv
+Z10 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z11 !s110 1739569802
 !i10b 1
-!s100 USalNTlkgF[[22D;eMB[j1
-I<fc3hh<_j;4jCUOK3[9i33
-Z5 VDg1SIo80bB@j0V0VzS_@n1
-!s105 driver_sv_unit
+!s100 95HFc2Id?EfW6EG9^65B;1
+IllXT=B>jK=]OG2^TL4jDA1
 S1
-Z6 dC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3
-w1739512865
-8C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/driver.sv
-FC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/driver.sv
-L0 1
-Z7 OV;L;10.4d;61
+Z12 dI:/ece554/Minilab3
+w1739565664
+8I:/ece554/Minilab3/driver.sv
+FI:/ece554/Minilab3/driver.sv
+!i122 25
+L0 1 130
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z14 OL;L;2023.3;77
 r1
 !s85 0
 31
-Z8 !s108 1739513305.000000
-!s107 C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/driver.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/driver.sv|
-!i113 1
-Z9 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z15 !s108 1739569802.000000
+!s107 I:/ece554/Minilab3/driver.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/driver.sv|
+!i113 0
+Z16 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R8
 vminilab3_tb
-R3
-R4
+2I:/ece554/Minilab3/minilab3_tb.sv
+R10
+R11
 !i10b 1
-!s100 cF8zinVSX7BLmTH8VRT?11
-If?=9oD39L_UTfaQ?]0H>[1
-R5
-!s105 minilab3_tb_sv_unit
+!s100 Q;al=4hPWmmiLQ@HVKGRH1
+IUhgaQkz^7=[VAOc@MGkS[3
 S1
-R6
-w1739513299
-8C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/minilab3_tb.sv
-FC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/minilab3_tb.sv
-L0 1
-R7
+R12
+w1739566530
+8I:/ece554/Minilab3/minilab3_tb.sv
+FI:/ece554/Minilab3/minilab3_tb.sv
+!i122 26
+L0 1 117
+R13
+R14
 r1
 !s85 0
 31
+R15
+!s107 I:/ece554/Minilab3/minilab3_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/minilab3_tb.sv|
+!i113 0
+R16
 R8
-!s107 C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/minilab3_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/minilab3_tb.sv|
-!i113 1
-R9
 vspart
-R3
-!s110 1739513683
+2I:/ece554/Minilab3/spart.sv
+R10
+Z17 !s110 1739569803
 !i10b 1
-!s100 >6jld6Pi9@0?8jmIIH;UB2
-I=VQ>agK]IbJMQK1]>MfHA1
-R5
-!s105 spart_sv_unit
+!s100 fC;QkkJKLaf0ljCVfD]031
+IU0L109j53cFLPm4acP6CR1
 S1
-R6
-w1739513677
-8C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/spart.sv
-FC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/spart.sv
-L0 20
-R7
+R12
+w1739564879
+8I:/ece554/Minilab3/spart.sv
+FI:/ece554/Minilab3/spart.sv
+!i122 27
+L0 20 120
+R13
+R14
 r1
 !s85 0
 31
-!s108 1739513683.000000
-!s107 C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/spart.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/spart.sv|
-!i113 1
-R9
-vUART_rx
-R3
-R4
-!i10b 1
-!s100 9`Y<`5c<Z;d@HXebzS;;M0
-I^N4NN>6]?4;GNBT1@92VN1
-R5
-!s105 UART_rx_sv_unit
-S1
-R6
-Z10 w1739510011
-8C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_rx.sv
-FC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_rx.sv
-L0 1
-R7
-r1
-!s85 0
-31
+Z18 !s108 1739569803.000000
+!s107 I:/ece554/Minilab3/spart.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/spart.sv|
+!i113 0
+R16
 R8
-!s107 C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_rx.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_rx.sv|
-!i113 1
-R9
+vUART_rx
+2I:/ece554/Minilab3/UART_rx.sv
+R10
+R17
+!i10b 1
+!s100 AW4_imMg;6GH^nNPjU>=D1
+I:2=UiYi_W8]^Fi2m@47Qm0
+S1
+R12
+w1739569798
+8I:/ece554/Minilab3/UART_rx.sv
+FI:/ece554/Minilab3/UART_rx.sv
+!i122 28
+L0 1 126
+R13
+R14
+r1
+!s85 0
+31
+R18
+!s107 I:/ece554/Minilab3/UART_rx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/UART_rx.sv|
+!i113 0
+R16
+R8
 n@u@a@r@t_rx
 vUART_tx
-R3
-R4
-!i10b 1
-!s100 [F@ckPk>T>bgOaInLdmJ80
-I2LiGj2UK1gW:QHlROe3[<3
-R5
-!s105 UART_tx_sv_unit
-S1
-R6
+2I:/ece554/Minilab3/UART_tx.sv
 R10
-8C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_tx.sv
-FC:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_tx.sv
-L0 1
-R7
+!s110 1739569804
+!i10b 1
+!s100 NmG;QE`YcHn:Ycjk[oX_b0
+IMDj0:KITmn[TK9S18:?W>3
+S1
+R12
+w1739569202
+8I:/ece554/Minilab3/UART_tx.sv
+FI:/ece554/Minilab3/UART_tx.sv
+!i122 29
+L0 1 106
+R13
+R14
 r1
 !s85 0
 31
+!s108 1739569804.000000
+!s107 I:/ece554/Minilab3/UART_tx.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ece554/Minilab3/UART_tx.sv|
+!i113 0
+R16
 R8
-!s107 C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_tx.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/jcob0/OneDrive/Desktop/College Work/ECE554/Minilab3/UART_tx.sv|
-!i113 1
-R9
 n@u@a@r@t_tx

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1_spart
-Fri Feb 14 17:15:35 2025
+Tue Feb 18 15:53:27 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -48,7 +48,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Feb 14 17:15:35 2025          ;
+; Analysis & Synthesis Status     ; Successful - Tue Feb 18 15:53:27 2025          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; lab1_spart                                     ;
 ; Top-level Entity Name           ; lab1_spart                                     ;
@@ -196,8 +196,8 @@ https://fpgasoftware.intel.com/eula.
 ;     -- 7 input functions                    ; 5              ;
 ;     -- 6 input functions                    ; 19             ;
 ;     -- 5 input functions                    ; 9              ;
-;     -- 4 input functions                    ; 17             ;
-;     -- <=3 input functions                  ; 57             ;
+;     -- 4 input functions                    ; 18             ;
+;     -- <=3 input functions                  ; 56             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 90             ;
 ;                                             ;                ;
@@ -207,7 +207,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 90             ;
-; Total fan-out                               ; 858            ;
+; Total fan-out                               ; 859            ;
 ; Average fan-out                             ; 1.93           ;
 +---------------------------------------------+----------------+
 
@@ -293,8 +293,8 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |lab1_spart|spart:spart0|DC[4]                      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |lab1_spart|spart:spart0|DC[15]                     ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |lab1_spart|spart:spart0|DC[4]                      ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |lab1_spart|spart:spart0|DC[1]                      ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |lab1_spart|spart:spart0|UART_tx:tx|tx_shift_reg[1] ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |lab1_spart|driver:driver0|next_state               ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab1_spart|driver:driver0|Selector5                ;
@@ -322,8 +322,8 @@ Encoding Type:  One-Hot
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 8                           ;
 ;         2 data inputs ; 13                          ;
-;         3 data inputs ; 25                          ;
-;         4 data inputs ; 17                          ;
+;         3 data inputs ; 24                          ;
+;         4 data inputs ; 18                          ;
 ;         5 data inputs ; 9                           ;
 ;         6 data inputs ; 19                          ;
 ; boundary_port         ; 106                         ;
@@ -348,7 +348,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Fri Feb 14 17:15:24 2025
+    Info: Processing started: Tue Feb 18 15:53:17 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1_spart -c lab1_spart
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -485,10 +485,10 @@ Info (21057): Implemented 259 device resources after synthesis - the final resou
     Info (21060): Implemented 36 bidirectional pins
     Info (21061): Implemented 153 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 109 warnings
-    Info: Peak virtual memory: 4865 megabytes
-    Info: Processing ended: Fri Feb 14 17:15:35 2025
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 4866 megabytes
+    Info: Processing ended: Tue Feb 18 15:53:27 2025
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:13
 
 
 +------------------------------------------+

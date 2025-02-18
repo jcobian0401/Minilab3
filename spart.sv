@@ -30,10 +30,10 @@ module spart(
     input rxd
     );
     ////////////////Declared Variables//////////////////
-    localparam Baud4800 = 16'h28b1;
-    localparam Baud9600 = 16'h1459;
-    localparam Baud19200 = 16'h0A2D;
-    localparam Baud38400 = 16'h0516;
+    localparam Baud4800 = 16'h28b0;
+    localparam Baud9600 = 16'h1458;
+    localparam Baud19200 = 16'h0A2c;
+    localparam Baud38400 = 16'h0515;
     logic [15:0] DB;
     logic [15:0] DC, iDC;
     logic [7:0] tx_data, rx_data, status_reg;

@@ -1,5 +1,5 @@
 Fitter report for lab1_spart
-Fri Feb 14 17:16:16 2025
+Tue Feb 18 15:54:08 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -64,7 +64,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +---------------------------------+------------------------------------------------+
-; Fitter Status                   ; Successful - Fri Feb 14 17:16:16 2025          ;
+; Fitter Status                   ; Successful - Tue Feb 18 15:54:08 2025          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; lab1_spart                                     ;
 ; Top-level Entity Name           ; lab1_spart                                     ;
@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
 ; Logic utilization (in ALMs)     ; 63 / 32,070 ( < 1 % )                          ;
-; Total registers                 ; 93                                             ;
+; Total registers                 ; 97                                             ;
 ; Total pins                      ; 106 / 457 ( 23 % )                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                          ;
@@ -177,9 +177,13 @@ https://fpgasoftware.intel.com/eula.
 ; Node                                    ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                  ; Destination Port ; Destination Port Name ;
 +-----------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+---------------------------------------------------+------------------+-----------------------+
 ; CLOCK_50~inputCLKENA0                   ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                   ;                  ;                       ;
-; spart:spart0|DC[6]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; spart:spart0|DC[6]~DUPLICATE                      ;                  ;                       ;
-; spart:spart0|UART_rx:rx|rdy             ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; spart:spart0|UART_rx:rx|rdy~DUPLICATE             ;                  ;                       ;
-; spart:spart0|UART_rx:rx|rx_shift_reg[3] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; spart:spart0|UART_rx:rx|rx_shift_reg[3]~DUPLICATE ;                  ;                       ;
+; spart:spart0|DC[9]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; spart:spart0|DC[9]~DUPLICATE                      ;                  ;                       ;
+; spart:spart0|DC[10]                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; spart:spart0|DC[10]~DUPLICATE                     ;                  ;                       ;
+; spart:spart0|DC[11]                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; spart:spart0|DC[11]~DUPLICATE                     ;                  ;                       ;
+; spart:spart0|DC[14]                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; spart:spart0|DC[14]~DUPLICATE                     ;                  ;                       ;
+; spart:spart0|DC[15]                     ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; spart:spart0|DC[15]~DUPLICATE                     ;                  ;                       ;
+; spart:spart0|UART_rx:rx|rx_shift_reg[7] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; spart:spart0|UART_rx:rx|rx_shift_reg[7]~DUPLICATE ;                  ;                       ;
+; spart:spart0|UART_rx:rx|state           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; spart:spart0|UART_rx:rx|state~DUPLICATE           ;                  ;                       ;
 +-----------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+---------------------------------------------------+------------------+-----------------------+
 
 
@@ -231,12 +235,12 @@ The pin-out file can be found in I:/ece554/Minilab3/lab1_spart.pin.
 +-------------------------------------------------------------+--------------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 63 / 32,070        ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 63                 ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 71 / 32,070        ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 35                 ;       ;
-;         [b] ALMs used for LUT logic                         ; 26                 ;       ;
-;         [c] ALMs used for registers                         ; 10                 ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 72 / 32,070        ; < 1 % ;
+;         [a] ALMs used for LUT logic and registers           ; 32                 ;       ;
+;         [b] ALMs used for LUT logic                         ; 27                 ;       ;
+;         [c] ALMs used for registers                         ; 13                 ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 8 / 32,070         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 9 / 32,070         ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32,070         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -253,17 +257,17 @@ The pin-out file can be found in I:/ece554/Minilab3/lab1_spart.pin.
 ;     -- 7 input functions                                    ; 5                  ;       ;
 ;     -- 6 input functions                                    ; 19                 ;       ;
 ;     -- 5 input functions                                    ; 9                  ;       ;
-;     -- 4 input functions                                    ; 17                 ;       ;
-;     -- <=3 input functions                                  ; 58                 ;       ;
+;     -- 4 input functions                                    ; 18                 ;       ;
+;     -- <=3 input functions                                  ; 57                 ;       ;
 ; Combinational ALUT usage for route-throughs                 ; 5                  ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 93                 ;       ;
+; Dedicated logic registers                                   ; 97                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
-;         -- Primary logic registers                          ; 89 / 64,140        ; < 1 % ;
-;         -- Secondary logic registers                        ; 4 / 64,140         ; < 1 % ;
+;         -- Primary logic registers                          ; 88 / 64,140        ; < 1 % ;
+;         -- Secondary logic registers                        ; 9 / 64,140         ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
 ;         -- Design implementation registers                  ; 90                 ;       ;
-;         -- Routing optimization registers                   ; 3                  ;       ;
+;         -- Routing optimization registers                   ; 7                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 106 / 457          ; 23 %  ;
@@ -318,12 +322,12 @@ The pin-out file can be found in I:/ece554/Minilab3/lab1_spart.pin.
 ; Oscillator blocks                                           ; 0 / 1              ; 0 %   ;
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
-; Average interconnect usage (total/H/V)                      ; 0.0% / 0.1% / 0.0% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 0.9% / 1.2% / 0.3% ;       ;
-; Maximum fan-out                                             ; 93                 ;       ;
-; Highest non-global fan-out                                  ; 76                 ;       ;
-; Total fan-out                                               ; 873                ;       ;
-; Average fan-out                                             ; 1.92               ;       ;
+; Average interconnect usage (total/H/V)                      ; 0.0% / 0.0% / 0.0% ;       ;
+; Peak interconnect usage (total/H/V)                         ; 1.1% / 1.3% / 0.6% ;       ;
+; Maximum fan-out                                             ; 97                 ;       ;
+; Highest non-global fan-out                                  ; 80                 ;       ;
+; Total fan-out                                               ; 886                ;       ;
+; Average fan-out                                             ; 1.93               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -334,12 +338,12 @@ The pin-out file can be found in I:/ece554/Minilab3/lab1_spart.pin.
 +-------------------------------------------------------------+----------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 63 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 63                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 71 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 35                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 26                   ; 0                              ;
-;         [c] ALMs used for registers                         ; 10                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 72 / 32070 ( < 1 % ) ; 0 / 32070 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 32                   ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 27                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 13                   ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                    ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 8 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 9 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 32070 ( 0 % )    ; 0 / 32070 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                    ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                    ; 0                              ;
@@ -356,8 +360,8 @@ The pin-out file can be found in I:/ece554/Minilab3/lab1_spart.pin.
 ;     -- 7 input functions                                    ; 5                    ; 0                              ;
 ;     -- 6 input functions                                    ; 19                   ; 0                              ;
 ;     -- 5 input functions                                    ; 9                    ; 0                              ;
-;     -- 4 input functions                                    ; 17                   ; 0                              ;
-;     -- <=3 input functions                                  ; 58                   ; 0                              ;
+;     -- 4 input functions                                    ; 18                   ; 0                              ;
+;     -- <=3 input functions                                  ; 57                   ; 0                              ;
 ; Combinational ALUT usage for route-throughs                 ; 5                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                    ; 0                              ;
 ;     -- 64-address deep                                      ; 0                    ; 0                              ;
@@ -365,11 +369,11 @@ The pin-out file can be found in I:/ece554/Minilab3/lab1_spart.pin.
 ;                                                             ;                      ;                                ;
 ; Dedicated logic registers                                   ; 0                    ; 0                              ;
 ;     -- By type:                                             ;                      ;                                ;
-;         -- Primary logic registers                          ; 89 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 4 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
+;         -- Primary logic registers                          ; 88 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 9 / 64140 ( < 1 % )  ; 0 / 64140 ( 0 % )              ;
 ;     -- By function:                                         ;                      ;                                ;
 ;         -- Design implementation registers                  ; 90                   ; 0                              ;
-;         -- Routing optimization registers                   ; 3                    ; 0                              ;
+;         -- Routing optimization registers                   ; 7                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ;                                                             ;                      ;                                ;
 ; Virtual pins                                                ; 0                    ; 0                              ;
@@ -386,7 +390,7 @@ The pin-out file can be found in I:/ece554/Minilab3/lab1_spart.pin.
 ;     -- Registered Output Connections                        ; 0                    ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; Internal Connections                                        ;                      ;                                ;
-;     -- Total Connections                                    ; 873                  ; 0                              ;
+;     -- Total Connections                                    ; 886                  ; 0                              ;
 ;     -- Registered Connections                               ; 233                  ; 0                              ;
 ;                                                             ;                      ;                                ;
 ; External Connections                                        ;                      ;                                ;
@@ -422,8 +426,8 @@ The pin-out file can be found in I:/ece554/Minilab3/lab1_spart.pin.
 ; CLOCK2_50 ; AA16  ; 4A       ; 56           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; CLOCK3_50 ; Y26   ; 5B       ; 89           ; 25           ; 3            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; CLOCK4_50 ; K14   ; 8A       ; 32           ; 81           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
-; CLOCK_50  ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 93                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
-; KEY[0]    ; AA14  ; 3B       ; 36           ; 0            ; 0            ; 76                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; CLOCK_50  ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 97                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; KEY[0]    ; AA14  ; 3B       ; 36           ; 0            ; 0            ; 80                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; KEY[1]    ; AA15  ; 3B       ; 36           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; KEY[2]    ; W15   ; 3B       ; 40           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; KEY[3]    ; Y16   ; 3B       ; 40           ; 0            ; 17           ; 0                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
@@ -1572,11 +1576,11 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name ; Library Name ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------+-------------+--------------+
-; |lab1_spart                ; 63.0 (2.2)           ; 70.0 (2.3)                       ; 7.0 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 108 (5)             ; 93 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 106  ; 0            ; |lab1_spart                         ; lab1_spart  ; work         ;
-;    |driver:driver0|        ; 8.3 (8.3)            ; 8.3 (8.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 12 (12)             ; 16 (16)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |lab1_spart|driver:driver0          ; driver      ; work         ;
-;    |spart:spart0|          ; 51.8 (31.6)          ; 59.3 (36.7)                      ; 7.5 (5.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 91 (57)             ; 77 (43)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |lab1_spart|spart:spart0            ; spart       ; work         ;
-;       |UART_rx:rx|         ; 7.6 (7.6)            ; 9.9 (9.9)                        ; 2.3 (2.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 13 (13)             ; 19 (19)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |lab1_spart|spart:spart0|UART_rx:rx ; UART_rx     ; work         ;
-;       |UART_tx:tx|         ; 12.7 (12.7)          ; 12.7 (12.7)                      ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 21 (21)             ; 15 (15)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |lab1_spart|spart:spart0|UART_tx:tx ; UART_tx     ; work         ;
+; |lab1_spart                ; 63.0 (2.2)           ; 71.0 (2.2)                       ; 8.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 108 (5)             ; 97 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 106  ; 0            ; |lab1_spart                         ; lab1_spart  ; work         ;
+;    |driver:driver0|        ; 8.6 (8.6)            ; 8.6 (8.6)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 12 (12)             ; 16 (16)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |lab1_spart|driver:driver0          ; driver      ; work         ;
+;    |spart:spart0|          ; 51.8 (31.6)          ; 60.3 (37.2)                      ; 8.4 (5.6)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 91 (57)             ; 81 (47)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |lab1_spart|spart:spart0            ; spart       ; work         ;
+;       |UART_rx:rx|         ; 7.7 (7.7)            ; 10.4 (10.4)                      ; 2.8 (2.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 13 (13)             ; 19 (19)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |lab1_spart|spart:spart0|UART_rx:rx ; UART_rx     ; work         ;
+;       |UART_tx:tx|         ; 12.6 (12.6)          ; 12.7 (12.7)                      ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 21 (21)             ; 15 (15)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |lab1_spart|spart:spart0|UART_tx:tx ; UART_tx     ; work         ;
 +----------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1851,8 +1855,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - spart:spart0|UART_tx:tx|tx_shift_reg[8]    ; 0                 ; 0       ;
 ;      - spart:spart0|tx_data[7]                    ; 0                 ; 0       ;
 ;      - LEDR[0]~output                             ; 0                 ; 0       ;
-;      - spart:spart0|DC[6]~DUPLICATE               ; 0                 ; 0       ;
-;      - spart:spart0|UART_rx:rx|rdy~DUPLICATE      ; 0                 ; 0       ;
+;      - spart:spart0|DC[15]~DUPLICATE              ; 0                 ; 0       ;
+;      - spart:spart0|DC[14]~DUPLICATE              ; 0                 ; 0       ;
+;      - spart:spart0|DC[11]~DUPLICATE              ; 0                 ; 0       ;
+;      - spart:spart0|DC[10]~DUPLICATE              ; 0                 ; 0       ;
+;      - spart:spart0|DC[9]~DUPLICATE               ; 0                 ; 0       ;
+;      - spart:spart0|UART_rx:rx|state~DUPLICATE    ; 0                 ; 0       ;
 ; CLOCK_50                                          ;                   ;         ;
 +---------------------------------------------------+-------------------+---------+
 
@@ -1862,14 +1870,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                       ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                                   ; PIN_AF14           ; 93      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; KEY[0]                                     ; PIN_AA14           ; 76      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; driver:driver0|Selector3~0                 ; LABCELL_X56_Y4_N15 ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; driver:driver0|current_state.INIT_BRG_HIGH ; FF_X53_Y4_N47      ; 21      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; driver:driver0|current_state.INIT_BRG_LOW  ; FF_X56_Y4_N38      ; 18      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; driver:driver0|current_state.WRITE_DATA    ; FF_X53_Y4_N38      ; 15      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; spart:spart0|UART_tx:tx|Selector11~0       ; LABCELL_X53_Y4_N51 ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; spart:spart0|WideNor1                      ; LABCELL_X53_Y4_N42 ; 26      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CLOCK_50                                   ; PIN_AF14           ; 97      ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; KEY[0]                                     ; PIN_AA14           ; 80      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; driver:driver0|Selector3~0                 ; LABCELL_X68_Y4_N39 ; 9       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; driver:driver0|current_state.INIT_BRG_HIGH ; FF_X70_Y4_N47      ; 21      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; driver:driver0|current_state.INIT_BRG_LOW  ; FF_X68_Y4_N32      ; 18      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; driver:driver0|current_state.WRITE_DATA    ; FF_X71_Y4_N47      ; 15      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; spart:spart0|UART_tx:tx|Selector11~0       ; LABCELL_X67_Y4_N33 ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; spart:spart0|WideNor1                      ; LABCELL_X73_Y4_N21 ; 25      ; Clock enable ; no     ; --                   ; --               ; --                        ;
 +--------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1878,7 +1886,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+---------+----------------------+------------------+---------------------------+
 ; Name     ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_AF14 ; 93      ; Global Clock         ; GCLK4            ; --                        ;
+; CLOCK_50 ; PIN_AF14 ; 97      ; Global Clock         ; GCLK4            ; --                        ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1887,14 +1895,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-------------------------+
 ; Routing Resource Type                       ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Block interconnects                         ; 186 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 8 / 13,420 ( < 1 % )    ;
-; C2 interconnects                            ; 15 / 119,108 ( < 1 % )  ;
+; Block interconnects                         ; 193 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 9 / 13,420 ( < 1 % )    ;
+; C2 interconnects                            ; 17 / 119,108 ( < 1 % )  ;
 ; C4 interconnects                            ; 19 / 56,300 ( < 1 % )   ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )          ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )          ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )          ;
-; Direct links                                ; 57 / 289,320 ( < 1 % )  ;
+; Direct links                                ; 63 / 289,320 ( < 1 % )  ;
 ; Global clocks                               ; 1 / 16 ( 6 % )          ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )           ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )           ;
@@ -1950,12 +1958,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )           ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )          ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )          ;
-; Local interconnects                         ; 60 / 84,580 ( < 1 % )   ;
+; Local interconnects                         ; 65 / 84,580 ( < 1 % )   ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )          ;
-; R14 interconnects                           ; 18 / 12,676 ( < 1 % )   ;
-; R14/C12 interconnect drivers                ; 20 / 20,720 ( < 1 % )   ;
-; R3 interconnects                            ; 56 / 130,992 ( < 1 % )  ;
-; R6 interconnects                            ; 97 / 266,960 ( < 1 % )  ;
+; R14 interconnects                           ; 20 / 12,676 ( < 1 % )   ;
+; R14/C12 interconnect drivers                ; 24 / 20,720 ( < 1 % )   ;
+; R3 interconnects                            ; 65 / 130,992 ( < 1 % )  ;
+; R6 interconnects                            ; 73 / 266,960 ( < 1 % )  ;
 ; Spine clocks                                ; 1 / 360 ( < 1 % )       ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )      ;
 +---------------------------------------------+-------------------------+
@@ -2176,7 +2184,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; CLOCK_50        ; CLOCK_50             ; 4.9               ;
+; CLOCK_50        ; CLOCK_50             ; 9.0               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -2187,40 +2195,72 @@ This will disable optimization of problematic paths and expose them for further 
 +-----------------------------------------+-------------------------------------------+-------------------+
 ; Source Register                         ; Destination Register                      ; Delay Added in ns ;
 +-----------------------------------------+-------------------------------------------+-------------------+
-; spart:spart0|UART_rx:rx|state           ; spart:spart0|UART_rx:rx|rdy               ; 0.236             ;
-; driver:driver0|save_buffer[3]           ; spart:spart0|tx_data[3]                   ; 0.202             ;
-; driver:driver0|save_buffer[1]           ; spart:spart0|tx_data[1]                   ; 0.202             ;
-; spart:spart0|UART_rx:rx|bit_cnt[1]      ; spart:spart0|UART_rx:rx|rdy               ; 0.200             ;
-; driver:driver0|current_state.IDLE       ; driver:driver0|current_state.INIT_BRG_LOW ; 0.200             ;
-; driver:driver0|save_buffer[5]           ; spart:spart0|tx_data[5]                   ; 0.196             ;
-; driver:driver0|save_buffer[2]           ; spart:spart0|tx_data[2]                   ; 0.195             ;
-; driver:driver0|current_state.READ_DATA  ; driver:driver0|current_state.WRITE_DATA   ; 0.187             ;
-; spart:spart0|UART_rx:rx|rdy             ; driver:driver0|current_state.INIT_BRG_LOW ; 0.181             ;
-; spart:spart0|tx_data[2]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[3]   ; 0.180             ;
-; spart:spart0|tx_data[0]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[1]   ; 0.175             ;
-; spart:spart0|tx_data[4]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[5]   ; 0.175             ;
-; spart:spart0|tx_data[6]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[7]   ; 0.175             ;
-; driver:driver0|br_change                ; driver:driver0|current_state.INIT_BRG_LOW ; 0.175             ;
-; spart:spart0|UART_tx:tx|tx_shift_reg[8] ; spart:spart0|UART_tx:tx|tx_shift_reg[7]   ; 0.167             ;
-; spart:spart0|UART_tx:tx|tx_shift_reg[6] ; spart:spart0|UART_tx:tx|tx_shift_reg[5]   ; 0.167             ;
-; spart:spart0|tx_data[1]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[2]   ; 0.166             ;
-; spart:spart0|tx_data[3]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[4]   ; 0.166             ;
-; spart:spart0|UART_rx:rx|bit_cnt[2]      ; spart:spart0|UART_rx:rx|rdy               ; 0.164             ;
-; spart:spart0|UART_tx:tx|tx_shift_reg[4] ; spart:spart0|UART_tx:tx|tx_shift_reg[3]   ; 0.160             ;
-; spart:spart0|tx_data[5]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[6]   ; 0.159             ;
-; spart:spart0|UART_tx:tx|tx_shift_reg[7] ; spart:spart0|UART_tx:tx|tx_shift_reg[6]   ; 0.152             ;
-; spart:spart0|UART_tx:tx|tx_shift_reg[5] ; spart:spart0|UART_tx:tx|tx_shift_reg[4]   ; 0.146             ;
-; driver:driver0|br_cfg_flopped[0]        ; driver:driver0|br_change                  ; 0.139             ;
-; spart:spart0|UART_tx:tx|state           ; spart:spart0|UART_tx:tx|tx_shift_reg[8]   ; 0.127             ;
-; spart:spart0|UART_rx:rx|bit_cnt[3]      ; spart:spart0|UART_rx:rx|rdy               ; 0.107             ;
-; spart:spart0|UART_rx:rx|bit_cnt[0]      ; spart:spart0|UART_rx:rx|rdy               ; 0.091             ;
-; spart:spart0|UART_tx:tx|tx_shift_reg[2] ; spart:spart0|UART_tx:tx|tx_shift_reg[1]   ; 0.055             ;
-; driver:driver0|br_cfg_flopped[1]        ; driver:driver0|br_change                  ; 0.031             ;
-; spart:spart0|UART_rx:rx|rx_shift_reg[6] ; spart:spart0|UART_rx:rx|rx_shift_reg[5]   ; 0.030             ;
-; spart:spart0|tx_data[7]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[8]   ; 0.024             ;
-; spart:spart0|UART_tx:tx|bit_cnt[0]      ; spart:spart0|UART_tx:tx|bit_cnt[1]        ; 0.023             ;
+; spart:spart0|DC[8]                      ; spart:spart0|DC[10]                       ; 0.567             ;
+; spart:spart0|DC[14]                     ; spart:spart0|DC[10]                       ; 0.540             ;
+; spart:spart0|DC[10]                     ; spart:spart0|DC[10]                       ; 0.490             ;
+; spart:spart0|DC[0]                      ; spart:spart0|DC[10]                       ; 0.440             ;
+; spart:spart0|DC[9]                      ; spart:spart0|DC[10]                       ; 0.387             ;
+; spart:spart0|DC[15]                     ; spart:spart0|DC[10]                       ; 0.354             ;
+; driver:driver0|current_state.WRITE_DATA ; spart:spart0|tx_data[3]                   ; 0.246             ;
+; driver:driver0|save_buffer[3]           ; spart:spart0|tx_data[3]                   ; 0.212             ;
+; driver:driver0|save_buffer[1]           ; spart:spart0|tx_data[1]                   ; 0.212             ;
+; spart:spart0|DC[7]                      ; spart:spart0|DC[10]                       ; 0.210             ;
+; driver:driver0|current_state.IDLE       ; driver:driver0|current_state.INIT_BRG_LOW ; 0.210             ;
+; spart:spart0|DC[6]                      ; spart:spart0|DC[10]                       ; 0.210             ;
+; spart:spart0|DC[5]                      ; spart:spart0|DC[10]                       ; 0.210             ;
+; spart:spart0|DC[13]                     ; spart:spart0|DC[10]                       ; 0.210             ;
+; spart:spart0|DC[12]                     ; spart:spart0|DC[10]                       ; 0.210             ;
+; spart:spart0|DC[11]                     ; spart:spart0|DC[10]                       ; 0.210             ;
+; driver:driver0|save_buffer[5]           ; spart:spart0|tx_data[5]                   ; 0.207             ;
+; driver:driver0|save_buffer[2]           ; spart:spart0|tx_data[2]                   ; 0.206             ;
+; spart:spart0|transmit                   ; spart:spart0|UART_tx:tx|state             ; 0.206             ;
+; spart:spart0|tx_data[0]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[1]   ; 0.190             ;
+; driver:driver0|current_state.READ_DATA  ; driver:driver0|current_state.WRITE_DATA   ; 0.185             ;
+; spart:spart0|tx_data[2]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[3]   ; 0.183             ;
+; spart:spart0|tx_data[6]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[7]   ; 0.183             ;
+; driver:driver0|br_change                ; driver:driver0|current_state.INIT_BRG_LOW ; 0.183             ;
+; spart:spart0|tx_data[4]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[5]   ; 0.183             ;
+; spart:spart0|tx_data[3]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[4]   ; 0.176             ;
+; spart:spart0|UART_tx:tx|tx_shift_reg[4] ; spart:spart0|UART_tx:tx|tx_shift_reg[3]   ; 0.176             ;
+; spart:spart0|tx_data[5]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[6]   ; 0.170             ;
+; spart:spart0|UART_tx:tx|tx_shift_reg[2] ; spart:spart0|UART_tx:tx|tx_shift_reg[1]   ; 0.170             ;
+; spart:spart0|tx_data[1]                 ; spart:spart0|UART_tx:tx|tx_shift_reg[2]   ; 0.170             ;
+; spart:spart0|DB[11]                     ; spart:spart0|DC[0]                        ; 0.169             ;
+; spart:spart0|UART_tx:tx|tx_shift_reg[3] ; spart:spart0|UART_tx:tx|tx_shift_reg[2]   ; 0.162             ;
+; spart:spart0|UART_tx:tx|tx_shift_reg[7] ; spart:spart0|UART_tx:tx|tx_shift_reg[6]   ; 0.161             ;
+; spart:spart0|UART_tx:tx|tx_shift_reg[5] ; spart:spart0|UART_tx:tx|tx_shift_reg[4]   ; 0.161             ;
+; driver:driver0|br_cfg_flopped[0]        ; driver:driver0|br_change                  ; 0.155             ;
+; spart:spart0|DC[3]                      ; spart:spart0|DC[10]                       ; 0.144             ;
+; spart:spart0|DC[2]                      ; spart:spart0|DC[10]                       ; 0.144             ;
+; spart:spart0|DC[1]                      ; spart:spart0|DC[10]                       ; 0.144             ;
+; spart:spart0|DC[4]                      ; spart:spart0|DC[10]                       ; 0.144             ;
+; spart:spart0|UART_tx:tx|state           ; spart:spart0|UART_tx:tx|tx_shift_reg[8]   ; 0.121             ;
+; spart:spart0|UART_rx:rx|state           ; spart:spart0|UART_rx:rx|rdy               ; 0.114             ;
+; spart:spart0|DB[14]                     ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[5]                      ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[4]                      ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[3]                      ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[2]                      ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[1]                      ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[0]                      ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[12]                     ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[8]                      ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[13]                     ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[15]                     ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[10]                     ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[7]                      ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[9]                      ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|DB[6]                      ; spart:spart0|DC[0]                        ; 0.113             ;
+; spart:spart0|UART_rx:rx|rdy             ; driver:driver0|current_state.INIT_BRG_LOW ; 0.106             ;
+; spart:spart0|UART_tx:tx|tx_shift_reg[6] ; spart:spart0|UART_tx:tx|tx_shift_reg[5]   ; 0.065             ;
+; spart:spart0|UART_tx:tx|bit_cnt[0]      ; spart:spart0|UART_tx:tx|bit_cnt[1]        ; 0.033             ;
+; spart:spart0|UART_rx:rx|rx_shift_reg[4] ; spart:spart0|UART_rx:rx|rx_shift_reg[3]   ; 0.032             ;
+; spart:spart0|UART_rx:rx|rx_shift_reg[2] ; spart:spart0|UART_rx:rx|rx_shift_reg[1]   ; 0.032             ;
+; spart:spart0|UART_rx:rx|rx_shift_reg[3] ; spart:spart0|UART_rx:rx|rx_shift_reg[2]   ; 0.032             ;
+; spart:spart0|UART_rx:rx|bit_cnt[0]      ; spart:spart0|UART_rx:rx|bit_cnt[1]        ; 0.021             ;
+; spart:spart0|UART_rx:rx|rx_shift_reg[6] ; spart:spart0|UART_rx:rx|rx_shift_reg[5]   ; 0.019             ;
 +-----------------------------------------+-------------------------------------------+-------------------+
-Note: This table only shows the top 32 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 64 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -2268,7 +2308,7 @@ Info (332111): Found 4 clocks
     Info (332111):   20.000     CLOCK_50
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:05
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:06
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:05
@@ -2277,17 +2317,17 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X45_Y0 to location X55_Y10
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X67_Y0 to location X77_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.41 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.40 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
 Warning (169064): Following 36 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin GPIO[0] has a permanently disabled output enable File: I:/ece554/Minilab3/lab1_spart.v Line: 33
     Info (169065): Pin GPIO[1] has a permanently disabled output enable File: I:/ece554/Minilab3/lab1_spart.v Line: 33
@@ -2327,10 +2367,10 @@ Warning (169064): Following 36 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO[5] has a permanently disabled output enable File: I:/ece554/Minilab3/lab1_spart.v Line: 33
 Info (144001): Generated suppressed messages file I:/ece554/Minilab3/lab1_spart.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 7653 megabytes
-    Info: Processing ended: Fri Feb 14 17:16:18 2025
-    Info: Elapsed time: 00:00:40
-    Info: Total CPU time (on all processors): 00:03:27
+    Info: Peak virtual memory: 7649 megabytes
+    Info: Processing ended: Tue Feb 18 15:54:10 2025
+    Info: Elapsed time: 00:00:41
+    Info: Total CPU time (on all processors): 00:03:31
 
 
 +----------------------------+
